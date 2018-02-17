@@ -48,6 +48,11 @@ describe('testing SLL nthFromLast method', () => {
         expect(sll.nthFromLast(9).data).to.equal('f')
     })
 
+    it('should err out if the list is empty', () => {
+        let sll = new SLL();
+        expect(sll.nthFromLast.bind(sll, 2)).to.throw();
+    })
+
     it('should err out if given a position bigger than SLL size', () => {
         let sll = new SLL();
         sll.add(1);

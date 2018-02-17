@@ -51,9 +51,16 @@ exports.BST.prototype.isBalanced = function() {
         }
     }
     recurse(this);
+    console.log(tally)
 
+    //TODO: this ternary actually doesn't work for a condition if diff === 2
     let diff = Math.abs(tally.left - tally.right);
-    return diff < 2 ? true : false;
+    if (diff < 2) {
+        return true;
+    } else if (diff >= 2) {
+        return false;
+    }
+    // return diff < 2 ? true : false;
 }
 
 

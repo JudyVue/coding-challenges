@@ -31,7 +31,7 @@ exports.SLL.prototype.add = function(data) {
 
 exports.SLL.prototype.nthFromLast = function(pos) {
     if (!this.size) {
-        console.log('list is empty');
+        throw new Error('this is an empty list')
         return;
     } 
 
