@@ -21,12 +21,13 @@ describe('testing BST', () => {
             for (let i = 0; i < testNums.length; i++) {
                 bst.add(testNums[i]);
             }
-            console.log(bst)
+            expect(bst.left.data).to.equal(10);
+            expect(bst.right.data).to.equal(60);
         })
     })
 
     describe('testing isBalanced method', () => {
-        it.only('should check if the tree is balanced', () => {
+        it('should check if the tree is balanced', () => {
             let balancedBST = new BST(10);
             const balancedNums = [9, 8, 11]
             for (let i = 0; i < balancedNums.length; i++) {
