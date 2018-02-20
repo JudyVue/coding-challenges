@@ -55,6 +55,5 @@ exports.SLL.prototype.nthFromLast = function(pos) {
         if (count === nthFromLast) break;
     }
 
-    console.log(currentNode)
     return currentNode;
 }

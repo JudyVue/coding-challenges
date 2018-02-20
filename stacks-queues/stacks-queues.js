@@ -4,47 +4,41 @@ module.exports = exports = {};
 
 class Queue {
     constructor() {
-        this.storage = [];
-        // return this.storage;
+        this.stack1 = [];
+        this.stack2 = [];
     }
 
     dequeue() {
-        this.storage.shift();
+        while (this.stack1.length) {
+            this.stack2.push(this.stack1.pop());
+        }
+        return this.stack2.pop();
     }
 
     enqueue(data){
-        this.storage.unshift(data);
+        while (this.stack2.length) {
+            this.stack1.push(stack.pop());
+        }
+        for (let i = 0; i < data.length; i++) {
+            this.stack1.push(data[i]);
+        }
+        return this.stack1;
     }
-
-    getSize() {
-        return this.storage.length;
-    }
-
 }
 
 exports.MyQueue = class {
-    constructor(...data) {
-        this.data = data;
+    constructor() {
+        this.queue;
     }
-
-    _utilStacks(stack1, stack2, queue) {
-        while (stack1.length) {
-            let first = stack1.pop();
-            stack2.push(first);
-            queue.enqueue(stack2.pop());
-        }
-    }
-
-    setNewQueue() {
-        //for purposes of this exercise, I am using built-in Javascript Arrays as "stacks" and only utilizing their "push" and "pop" methods;
-        let stack1 = this.data;
-        let stack2 = [];
+    setNewQueue(...data) {
         let q = new Queue();
+        q.enqueue(data)
+        this.queue = q;
+        return this.queue.stack1;
+    }
 
-        this._utilStacks(stack1, stack2, q)
-
-
-        return q;
+    dequeueMyQueue() {
+        return this.queue.dequeue();
     }
 
 
