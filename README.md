@@ -1,6 +1,6 @@
 # Coding Challenge
 
-### If you wish to execuse this code in your own terminal, please do the following:
+### If you wish to execute this code in your own terminal, please do the following:
 
 * [Install Node if you don't have it](https://nodejs.org/en/download/)
 * [Install NPM if you don't have it](https://docs.npmjs.com/getting-started/installing-node)
